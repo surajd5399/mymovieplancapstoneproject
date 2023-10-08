@@ -1,0 +1,35 @@
+<h4>Available Movies:</h4>
+<div class="card-deck">
+  <div class="row">
+    <div class="card" style="width: 18rem;padding-right:0;padding-left:0;margin:3px" *ngFor="let movie of movies">
+      <img class="card-img-top" style="height:10rem;object-fit: cover;" src="/assets/movie/{{movie.imageUrl}}"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <small class="text-muted">{{movie.language}}</small> | <small class="text-muted">{{movie.director}}</small>
+        <p class="card-text">
+          <a class="text-decoration-none text-primary" data-bs-toggle="collapse" href="#coll{{movie.movieId}}"
+            role="button" aria-expanded="false" aria-controls="coll1">
+            Show Details
+          </a>
+
+        </p>
+        <div class="collapse" id="coll{{movie.movieId}}">
+          <p class="card-text"><b>Genre:</b> {{movie.genre}} <br><b>Actors:</b>
+            <li *ngFor="let actor of movie.actors">{{actor}}</li>
+          </p>
+        </div>
+
+        <a href="#" class="btn btn-primary" (click)="click(movie.movieId)">Book Ticket</a>
+        <span class="price" style="float:right;"><h5 class="font-weight-bold text-primary" style="text-decoration: none;">{{movie.moviePrice | currency:"INR"}}</h5></span>
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Released: {{(movie.releasedate | date:"dd-MMM-yyy")}} </small><br>
+        <small class="text-muted">Runtime: {{movie.runtime}} mins </small>
+      </div>
+    </div>
+
+
+  </div>
+</div>

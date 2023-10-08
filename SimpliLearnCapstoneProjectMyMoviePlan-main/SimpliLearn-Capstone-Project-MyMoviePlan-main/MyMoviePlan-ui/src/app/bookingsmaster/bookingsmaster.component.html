@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center">Booking ID</th>
+                <th class="text-center">User ID</th>
+                <th class="text-center">Booking Details</th>
+                <th class="text-center">Booking Amount</th>
+                <th class="text-center">Booking Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bkng of bkngs">
+                <td>{{bkng.bookingId}}</td>
+                <td>{{bkng.userId}}</td>
+                <td>{{bkng.bookingDetails}}</td>
+                <td>{{bkng.bookingAmount | currency:'INR'}}</td>
+                <td>{{bkng.bookingStamp | date:'dd-MM-yyy hh:mm:ss'}}</td>
+            </tr>
+        </tbody>
+    </table>

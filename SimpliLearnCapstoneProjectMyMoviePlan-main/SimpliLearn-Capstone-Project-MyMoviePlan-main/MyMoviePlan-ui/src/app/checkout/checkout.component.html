@@ -1,0 +1,71 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">
+        <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="navbar-brand mb-0 h1">MyMoviePlan</span>
+    </a>
+</nav>
+<div class="card" id="cartitems">
+    <p style="display:inline;float:left;"><b><i class="bi bi-cart4"></i> Your Cart Items:</b></p>
+    <span style="display:inline;float:right;"> <i class="bi bi-cart4"></i><b> Your Cart Total:</b>
+        <p class="text-primary"><b>{{cart.totalprice | currency:"INR"}}</b></p> </span>
+        <div class="clearfix"></div>
+    <div class="card" *ngFor="let item of cart.items">
+        <div class="card-body">
+            <div class="row">
+                <table>
+                    <tr>
+                        <th style="width:35%;">Title</th>
+                        <th style="width:25%;">Quantity</th>
+                        <th style="width:25%;">Price</th>
+                        <th style="width:15%;">Action</th>
+                    </tr>
+                    <tr>
+                        <td style="width:35%;"> {{item.movie.title}}</td>
+                        <td style="width:25%;">{{item.quantity}}</td>
+                        <td style="width:25%;"> {{item.price | currency:"INR"}}</td>
+                        <td style="width:15%;"><a class="btn btn-danger btn-sm" (click)="removefromcart(item)"><i class="bi bi-x"></i></a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+        
+   
+</div>
+<div class="card" id="payment">
+    <p><b>Payment Gateway:</b></p>
+    <form>
+        <div class="row">
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="cardnumber">Credit/Debit card number</label>
+                    <input type="number" id="cardnumber" class="form-control" name="cardnumber"
+                        placeholder="Enter your card number" [(ngModel)]="cardnumber" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="cvv">CVV number</label>
+                    <input type="number" id="cvv" class="form-control" name="cvv" min="001" max="999"
+                        placeholder="Enter your CVV" [(ngModel)]="cvv" />
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="name">Name on card</label>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Enter name on card"
+                    [(ngModel)]="cardname" />
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-sm btn-success" *ngIf="cardnumber && cvv && cardname" (click)="pay()"> Pay
+                Now</button>
+        </div>
+    </form>
+</div>

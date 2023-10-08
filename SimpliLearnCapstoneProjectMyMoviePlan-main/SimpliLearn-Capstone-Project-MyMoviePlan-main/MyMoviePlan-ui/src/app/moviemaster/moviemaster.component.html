@@ -1,0 +1,39 @@
+<div class="container">
+    <button class="btn btn-success" (click)="navigateToAddMovie()">Add Movie</button>
+    <table class="table table-bordered table-striped" >
+        <thead class="table-dark">
+            <tr>
+                <th>Movie ID</th>
+                <th>Movie Poster</th>
+                <th>Movie Title</th>
+                <th>Director</th>
+                <th>Language</th>
+                <th>Genre</th>
+                <th>Actors</th>
+                <th>Runtime</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+                <th>Movie Price</th>
+                <th>Movie Status</th>            
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies">
+                <td>{{movie.movieId}}</td>
+                <td><img class="card-img-top" style="height:10rem;object-fit: cover;" src="/assets/movie/{{movie.imageUrl}}"
+                    alt="Card image cap"></td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.director}}</td>
+                    <td>{{movie.language}}</td>
+                    <td>{{movie.genre}}</td>
+                    <td><li *ngFor="let actor of movie.actors">{{actor}}</li></td>
+                    <td>{{movie.runtime}} mins</td>
+                    <td>{{movie.releasedate | date:"dd-MMM-yyy"}}</td>
+                    <td>{{movie.rating}}</td>
+                    <td>{{movie.moviePrice | currency : "INR"}}</td>
+                    <td><mat-slide-toggle color="accent" [checked]="movie.status" (change)="toggleChanged(movie.movieId, $event)"></mat-slide-toggle></td>
+                    
+            </tr>
+        </tbody>
+    </table>
+</div>

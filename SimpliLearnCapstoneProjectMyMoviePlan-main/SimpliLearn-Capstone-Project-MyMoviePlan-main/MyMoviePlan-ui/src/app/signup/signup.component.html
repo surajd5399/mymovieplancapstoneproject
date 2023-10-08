@@ -1,0 +1,77 @@
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                        class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                        alt="Sample photo">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">User Registration</h3>
+                        <form class="px-md-2" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">First Name</label>
+                                    <input type="text" id="form3Example1q1" class="form-control" name="firstName"
+                                        [ngStyle]="{'border-color': user.firstName? '' : '#ff8282'}"
+                                        [(ngModel)]="user.firstName" />
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">Middle Name</label>
+                                    <input type="text" id="form3Example1q2" class="form-control" name="middleName"
+                                        [(ngModel)]="user.middleName" />
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">Last Name</label>
+                                    <input type="text" id="form3Example1q3" class="form-control" name="lastName"
+                                        [ngStyle]="{'border-color': user.lastName? '' : '#ff8282'}"
+                                        [(ngModel)]="user.lastName" />
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">Username</label>
+                                    <input type="text" id="form3Example1q3" class="form-control"
+                                        placeholder="choose your username" name="userName"
+                                        [ngStyle]="{'border-color': user.userName? '' : '#ff8282'}"
+                                        [(ngModel)]="user.userName" />
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">E-mail</label>
+                                    <input type="text" id="form3Example1q3" class="form-control"
+                                        placeholder="your.email@example.com" name="email"
+                                        [ngStyle]="{'border-color': user.email? '' : '#ff8282'}"
+                                        [(ngModel)]="user.email" />
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">Country</label>
+                                    <div>
+                                        <select id="form3Example1q3" class="select" name="country"
+                                            [ngStyle]="{'border-color': user.country? '' : '#ff8282'}"
+                                            [(ngModel)]="user.country">
+                                            <option *ngFor="let country of country_list" value="{{country}}">{{country}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">Password</label>
+                                    <input type="password" id="form3Example1q3" class="form-control"
+                                        [ngStyle]="{'border-color': password? '' : '#ff8282'}"
+                                        placeholder="Enter a password" name="password" [(ngModel)]="password" />
+                                </div>
+                                <div class="form-outline mb-4 col-md-6 mb-4">
+                                    <label class="form-label" for="form3Example1q">Confirm Password</label>
+                                    <input type="password" id="form3Example1q3" class="form-control"
+                                        [ngStyle]="{'border-color': confirmpassword? '' : '#ff8282'}"
+                                        placeholder="Re-Enter the password" name="confirmpassword"
+                                        [(ngModel)]="confirmpassword" />
+                                </div>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-success mb-1">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

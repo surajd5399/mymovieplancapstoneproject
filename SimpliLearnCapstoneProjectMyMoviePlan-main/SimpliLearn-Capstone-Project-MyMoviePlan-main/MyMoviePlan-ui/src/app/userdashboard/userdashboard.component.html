@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="profile" style="display:inline;float:left;width:20%;background-color:#efefef;">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-md-9 col-lg-7 col-xl-5">
+            <div class="flex-shrink-0">
+                <img src="/assets/user_images/{{currntuser.userName}}.jpg" alt="Generic placeholder image"
+                    class="img-fluid " style="width: 180px; border-radius: 10px;"
+                    onerror="this.onerror=null;this.src='/assets/user_images/placeholder.jpg'">
+            </div>
+            <div class="flex-grow-1 ms-3">
+                <h5 class="mb-1">{{currntuser.firstName +' '+currntuser.lastName}}</h5>
+                <p class="mb-2 pb-1" style="color: #2b2a2a;">@username:{{currntuser.userName}}</p>
+                
+                    <div>
+                        e-mail: <p class="small text-muted mb-1">{{currntuser.email}}</p>
+
+                    </div>
+                    <div>
+                        Country: <p class="small text-muted mb-1">{{currntuser.country}}</p>
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content" style="display:inline;float:right;width:80%"><button class="btn btn-success" routerLink="">Book
+        Ticket Now</button>
+    <div class="d-flex" style="margin-top:1rem;">
+        <ul class="list-inline mx-auto justify-content-center">
+            <li class="list-inline-item"><button class="btn btn-primary"
+                    routerLink="update/{{currntuser.userName}}">Edit Profile Details</button></li>
+            <li class="list-inline-item"><button class="btn btn-primary" routerLink="changepassword">Change
+                    Password</button></li>
+            <li class="list-inline-item"><button class="btn btn-primary" routerLink="bookings">View Movie
+                    Bookings</button></li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
+</div>

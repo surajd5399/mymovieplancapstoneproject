@@ -1,0 +1,17 @@
+.container{
+    margin:0 auto 0;
+}
+.movielist{
+    width:70%;
+    display: inline;
+  
+    float:left;
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+}
+.cart{
+    width:30%;
+    display: inline;
+  
+    float:right;
+}

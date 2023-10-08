@@ -1,0 +1,91 @@
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <span class="text-center">
+            <h3>Add Movie</h3>
+        </span>
+        <div class="col-lg-8 col-xl-6">
+
+            <div class="card rounded-3">
+
+                <div class="card-body p-4 p-md-5">
+                    <form>
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="text" id="title`" class="form-control" name="title" [(ngModel)]="movie.title"/>
+                                    <label class="form-label" for="title">Title</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="text" id="genre" class="form-control" name="genre" [(ngModel)]="movie.genre"/>
+                                    <label class="form-label" for="genre">Genre</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="number" id="rating" min="1" max="5" class="form-control" name="rating" [(ngModel)]="movie.rating" />
+                                    <label class="form-label" for="rating">Rating</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="date" id="releasedate" class="form-control" name="releasedate" [(ngModel)]="movie.releasedate"/>
+                                    <label class="form-label" for="releasedate">Release Date</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="number" id="runtime" class="form-control" name="runtime" [(ngModel)]="movie.runtime"/>
+                                    <label class="form-label" for="runtime">Runtime(mins)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline">
+                            <input type="email" id="language" class="form-control" name="language" [(ngModel)]="movie.language"/>
+                            <label class="form-label" for="language">Language</label>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="actor" name="actor"class="form-control" [(ngModel)]="actortemp"/>
+                            <label class="form-label" for="actor">Add actor</label>
+                        </div></div>
+                        <div class="col">
+                        <button class="btn btn-primary btn-block mb-4" (click)="addActor()">Add actor</button>
+                        </div></div>
+                        <h6>Actors:</h6>
+                        <li *ngFor="let actor of movie.actors">{{actor}}</li>
+                        <br><div class="row">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="text" id="director" class="form-control" name="director" [(ngModel)]="movie.director" />
+                                    <label class="form-label" for="director">Director</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input type="number" id="price" class="form-control" name="price" [(ngModel)]="movie.moviePrice"/>
+                                    <label class="form-label" for="price">Price</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline">
+                            <input type="text" id="imageurl" class="form-control" name="url" [(ngModel)]="movie.imageUrl" />
+                            <label class="form-label" for="imageurl">Image file name</label>
+                        </div>
+                        <!-- Submit button -->
+                        <button class="btn btn-primary btn-block mb-4" (click)="saveMovie()">Add movie</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

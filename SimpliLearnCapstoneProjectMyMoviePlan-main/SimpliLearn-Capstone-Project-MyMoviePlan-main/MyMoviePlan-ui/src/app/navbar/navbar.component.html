@@ -1,0 +1,20 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">
+      <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+      <span class="navbar-brand mb-0 h1">MyMoviePlan</span>
+    </a>
+    <span>Welcome {{currentuser}} !!</span>
+    <div id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          
+          <span style="margin:5px;" *ngIf="!login">New User?</span>
+          <button style="margin:5px;" *ngIf="!login"class="btn btn-outline-primary my-2 my-sm-0" type="submit" routerLink="signup">Sign Up</button>
+          
+            <button style="margin:5px;" *ngIf="!login" class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="userlogin">User Login</button>
+            <button style="margin:5px;" *ngIf="!login" class="btn btn-outline-warning my-2 my-sm-0" type="submit" routerLink="adminlogin">Admin Login</button>
+            <button style="margin:5px;" *ngIf="login" class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="logout()">Logout</button>
+            
+          </form>
+    </div>
+  </nav>
